@@ -1,3 +1,4 @@
+import { ErrorElement } from "./components";
 import {
   HomeLayout,
   Landing,
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
+        errorElement: <ErrorElement />,
       },
       {
         path: "products",
