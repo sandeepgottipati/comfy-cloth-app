@@ -8,9 +8,9 @@ export const loader = async () => {
   const { data } = response.data;
   //console.log("from landing loader");
   //console.log(data);
-  const featuredProducts = data;
+  const products = data;
 
-  return featuredProducts;
+  return products;
 };
 const Landing = () => {
   customFetch(url);
