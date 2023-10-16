@@ -13,3 +13,5 @@ export { default as Filters } from './Filters'
 export { default as ProductsContainer } from './ProductsContainer'
 
 export { default as ProductList } from './ProductList'
+export { default as FormSelect } from './FormSelect'
+export { default as FormRange } from './FormRange'

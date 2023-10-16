@@ -10,7 +10,7 @@ export const loader = async () => {
   //console.log(data);
   const products = data;
 
-  return products;
+  return { products };
 };
 const Landing = () => {
   customFetch(url);
