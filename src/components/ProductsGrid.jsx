@@ -1,7 +1,7 @@
 import { useLoaderData, Link } from "react-router-dom";
 import { priceFormatter } from "../utils";
 const ProductsGrid = () => {
-  const products = useLoaderData();
+  const { products } = useLoaderData();
   return (
     <div className="grid gap-4  md:grid-cols-2 lg:grid-cols-3 pt-12">
       {products.map((product) => {
