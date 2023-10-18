@@ -45,7 +45,6 @@ const ProductsContainer = () => {
           <ProductList />
         )}
       </div>
-      <ProductList />
     </>
   );
 };
