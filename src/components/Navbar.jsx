@@ -23,7 +23,8 @@ const Navbar = () => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
-  const numItemsInCart = useSelector((state) => state.cartState.numItemsInCart);
+  const { numItemsInCart } = useSelector((state) => state.cartState);
+
   return (
     <nav className="bg-base-200">
       <div className="navbar align-element">
