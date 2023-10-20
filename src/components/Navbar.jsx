@@ -2,29 +2,14 @@ import { BsCart3, BsMoonFill, BsSunFill } from "react-icons/bs";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import NavLinks from "./NavLinks";
-import { useEffect, useState } from "react";
+import { toggleTheme } from "../features/user/userSlice";
 import { useSelector } from "react-redux";
-
-const themes = {
-  winter: "winter",
-  dracula: "dracula",
-};
-const getThemeFromLocalStorage = () => {
-  return localStorage.getItem("theme") || themes.winter;
-};
+import { useDispatch } from "react-redux";
 const Navbar = () => {
-  const [theme, setTheme] = useState(getThemeFromLocalStorage());
-  const handleTheme = () => {
-    const { winter, dracula } = themes;
-    const newTheme = theme === "winter" ? dracula : winter;
-    setTheme(newTheme);
-  };
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
   const { numItemsInCart } = useSelector((state) => state.cartState);
-
+  const { theme } = useSelector((state) => state.userState);
+  const isDarkTheme = theme === "dracula";
+  const dispatch = useDispatch();
   return (
     <nav className="bg-base-200">
       <div className="navbar align-element">
@@ -52,7 +37,11 @@ const Navbar = () => {
         <div className="navbar-end">
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
-            <input type="checkbox" onChange={handleTheme} />
+            <input
+              type="checkbox"
+              onChange={() => dispatch(toggleTheme())}
+              defaultChecked={isDarkTheme}
+            />
 
             {/* sun icon */}
             <BsSunFill className="swap-on h-4 w-4" />
