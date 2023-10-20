@@ -16,7 +16,7 @@ const CartItem = ({ cartItem }) => {
   return (
     <article
       key={cartID}
-      className="mb-12 flex flex-col space-y-4 sm:flex-row flex-wrap border-b border-base-200 pb-6 last:border-b-0"
+      className="mb-12 flex flex-col gap-y-4 sm:flex-row flex-wrap border-b border-base-200 pb-6 last:border-b-0"
     >
       <img
         src={image}
@@ -57,8 +57,8 @@ const CartItem = ({ cartItem }) => {
         >
           remove
         </button>
+        <p className="font-medium sm:ml-auto">{priceFormatter(price)}</p>
       </div>
-      <p className="font-medium sm:ml-auto">{priceFormatter(price)}</p>
     </article>
   );
 };
