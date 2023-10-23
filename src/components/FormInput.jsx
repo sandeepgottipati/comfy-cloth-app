@@ -10,7 +10,7 @@ const FormInput = (props) => {
         type={type}
         name={name}
         defaultValue={defaultValue}
-        className={`input input-bordered${size}`}
+        className={`input input-bordered input-${size}`}
       />
     </div>
   );
